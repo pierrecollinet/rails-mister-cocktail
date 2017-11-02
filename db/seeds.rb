@@ -18,4 +18,19 @@ puts "created!"
 Ingredient.create(name: "mint leaves")
 puts "created!"
 
+Ingredient.create(name: "Tequila")
+puts "created!"
+
+Ingredient.create(name: "Gin")
+puts "created!"
+
+Ingredient.create(name: "Vodka")
+puts "created!"
+
+Ingredient.create(name: "Strawberry")
+puts "created!"
+
+Ingredient.create(name: "Amaretto")
+puts "created!"
+
 puts "3 ingredients created, thanks !"
