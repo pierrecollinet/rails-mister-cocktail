@@ -1,33 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-xs-12 col-md-6 col-md-offset-3">
+
+<div class="col-xs-12 col-md-10 col-md-offset-1 wrapper">
   <h1>Cocktails</h1>
 
-  <table>
+<% @cocktails.each do |cocktail| %>
+  <div class="col-xs-12 col-md-6 ">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/200');">
+      <div class="card-category"><%= cocktail.name %> (<%= cocktail.doses.count %> ingrédients) </div>
+      <div class="card-description">
+        <h2>Ingrédients</h2>
+        <% cocktail.doses.each do |dose| %>
+          <li><%= dose.description %> de <%= dose.ingredient.name %></li>
+        <% end %>
+        <p>
+          <%= link_to 'Show cocktail', cocktail, class: "btn btn-success" %>
+          <%= link_to 'Add ingredient', new_cocktail_dose_path(cocktail), class: "btn btn-primary" %>
+        </p>
+      </div>
+      <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    </div>
+  </div>
 
-    <tbody>
-      <% @cocktails.each do |cocktail| %>
-        <tr>
-          <td>
-            <b><%= cocktail.name %></b> (<%= cocktail.doses.count %> ingrédients) :
-            <p>
-              <ul>
-                <% cocktail.doses.each do |dose| %>
-                  <li><%= dose.description %> de <%= dose.ingredient.name %></li>
-                <% end %>
-              </ul>
-            </p>
-            <p>
-              <%= link_to 'Show cocktail', cocktail, class: "btn btn-success" %>
-              <%= link_to 'Add ingredient', new_cocktail_dose_path(cocktail), class: "btn btn-primary" %>
-            </p>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+
+<% end %>
 
   <br>
-
-  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-danger" %>
+  <div class="center">
+    <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-danger" %>
+  </div>
 </div>
