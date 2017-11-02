@@ -12,7 +12,7 @@
 
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-md-6 ">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://unsplash.com/photos/dmkmrNptMpw');">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1349&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');">
         <div class="card-category"><%= cocktail.name %> (<%= cocktail.doses.count %> ingrédients) </div>
         <div class="card-description">
           <h2>Ingrédients</h2>
@@ -24,7 +24,7 @@
             <%= link_to 'Add ingredient', new_cocktail_dose_path(cocktail), class: "btn btn-primary" %>
           </p>
         </div>
-        <img class="card-user" src="/assets/alex.jpg">
+        <img class="card-user" src="https://i.skyrock.net/8961/4258961/pics/72820669.jpg">
       </div>
     </div>
 
