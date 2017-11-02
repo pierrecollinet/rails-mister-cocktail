@@ -9,14 +9,14 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <!-- Links -->
-    <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Cocktails", cocktails_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Ingredients", ingredients_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <a href="https://www.facebook.com/alex.vacca.146?fref=ts" class= "navbar-wagon-item navbar-wagon-link" ><i class="fa fa-facebook-square" aria-hidden="true"></i> Alex profile</a>
 
     <!-- Avatar with dropdown menu -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+        <%= image_tag "alex.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li>
             <%= link_to "#" do %>
