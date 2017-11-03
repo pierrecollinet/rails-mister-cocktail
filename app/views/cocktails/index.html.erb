@@ -13,6 +13,8 @@
     He is able to make 89 different cocktails and he knows more than 143 alcohols. So if he doesn't manage to become a Ruby developer or bitcoins expert, he still has a solid potential to make cocktails. Here you can discover some of his secrets...
   </p>
 
+
+
   <h1 class="center">Cocktails</h1>
 
   <div class="center" style="width:100%">
@@ -31,7 +33,13 @@
     <% end %>
 
 
-        <div class="card-category"><%= cocktail.name %> (<%= cocktail.doses.count %> ingrédients) </div>
+        <div class="card-category">
+          <%= cocktail.name %> (<%= cocktail.doses.count %> ingrédients)
+          <%= link_to edit_cocktail_path(cocktail) do %>
+            <i class="fa fa-pencil-square-o white" aria-hidden="true"></i>
+          <% end %>
+
+        </div>
         <div class="card-description">
           <h2>Ingrédients</h2>
           <% cocktail.doses.each do |dose| %>

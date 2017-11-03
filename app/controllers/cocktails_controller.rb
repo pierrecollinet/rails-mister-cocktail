@@ -1,9 +1,13 @@
 # app/controllers/restaurants_controller.rb
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show]
+  before_action :set_cocktail, only: [:show, :update, :edit]
 
   def index
-    @cocktails = Cocktail.all
+    if search = params["search"]
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{search}%")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
@@ -25,6 +29,22 @@ class CocktailsController < ApplicationController
       end
     end
   end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @cocktail.update(cocktail_params)
+        format.html { redirect_to @cocktail, notice: 'Cocktail was successfully updated.' }
+        format.json { render :show, status: :ok, location: @cocktail }
+      else
+        format.html { render :edit }
+        format.json { render json: @cocktail.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
